@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import { checkWinner, bestMove } from './AI';
 import './App.css';
@@ -13,7 +12,8 @@ function App() {
   });
   useEffect(() => {
     if (!isXNext && !checkWinner(squares) && squares.some(sq => !sq)) {
-      const aiMove = bestMove(squares, false); // AI chơi "O"
+      const aiMove = bestMove(squares, false); 
+      console.log(aiMove);
       if (aiMove.index !== null) {
         const newSquares = squares.slice();
         newSquares[aiMove.index] = 'O';
